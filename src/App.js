@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import SplashPage from './components/SplashPage';
+import ProjectsPage from './components/ProjectsPage';
+import AboutPage from './components/AboutPage';
+import ComicBookPage from './components/ComicBookPage';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('splash');
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {currentPage === 'splash' && <SplashPage setCurrentPage={setCurrentPage} />}
+      {currentPage === 'projects' && <ProjectsPage setCurrentPage={setCurrentPage} />}
+      {currentPage === 'about' && <AboutPage setCurrentPage={setCurrentPage} />}
+      {currentPage === 'comicbook' && <ComicBookPage setCurrentPage={setCurrentPage} />}
     </div>
   );
 }

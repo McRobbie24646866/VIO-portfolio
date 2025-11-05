@@ -1,0 +1,125 @@
+.comic-book-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1f2937, #111827);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  animation: pageSlideIn 0.8s ease-out;
+}
+
+@keyframes pageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.comic-nav {
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.9), rgba(236, 72, 153, 0.9));
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  animation: navSlideDown 0.6s ease-out 0.2s both;
+}
+
+@keyframes navSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.comic-nav-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.comic-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.comic-viewer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: calc(100vh - 100px);
+}
+
+.pdf-viewer {
+  width: 100%;
+  max-width: 1400px;
+  height: calc(100vh - 140px);
+  border: 3px solid;
+  border-image: linear-gradient(135deg, #f97316, #ec4899) 1;
+  border-radius: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+              0 0 40px rgba(249, 115, 22, 0.3),
+              0 0 40px rgba(236, 72, 153, 0.3);
+  background: white;
+}
+
+@media (max-width: 768px) {
+  .comic-nav {
+    padding: 1rem;
+  }
+
+  .comic-nav-content {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .comic-title {
+    font-size: 1.5rem;
+  }
+
+  .comic-viewer {
+    padding: 1rem;
+  }
+
+  .pdf-viewer {
+    height: calc(100vh - 180px);
+  }
+}

@@ -1,0 +1,35 @@
+.footprint-trail-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.footprint {
+  position: absolute;
+  font-size: 1.5rem;
+  animation: fadeOutFootprint 2s ease-out forwards;
+  transform: translate(-50%, -50%);
+}
+
+.footprint.left {
+  transform: translate(-50%, -50%) rotate(-15deg);
+}
+
+.footprint.right {
+  transform: translate(-50%, -50%) rotate(15deg);
+}
+
+@keyframes fadeOutFootprint {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
