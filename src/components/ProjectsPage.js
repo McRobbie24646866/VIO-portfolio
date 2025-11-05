@@ -46,7 +46,8 @@ const ProjectsPage = ({ setCurrentPage }) => {
       distance: "Ultra Marathon",
       description: "custom comic book created and hand drawn from scratch, my favorite first year project",
       tech: ["hand drawn", "adobe Fresco"],
-      link: "#"
+      isInternalPage: true,
+      page: "comicbook"
     },
     {
       title: "small API test project (IMY210)",
@@ -171,10 +172,20 @@ const ProjectsPage = ({ setCurrentPage }) => {
             </div>
 
             <div className="project-links">
-              <a href={selectedProject.link} className="project-link" target="_blank" rel="noopener noreferrer">
-                <ExternalLink size={24} />
-                View Project
-              </a>
+              {selectedProject.isInternalPage ? (
+                <button
+                  className="project-link"
+                  onClick={() => setCurrentPage(selectedProject.page)}
+                >
+                  <ExternalLink size={24} />
+                  View Project
+                </button>
+              ) : (
+                <a href={selectedProject.link} className="project-link" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink size={24} />
+                  View Project
+                </a>
+              )}
             </div>
 
             <div className="project-icon-container">
