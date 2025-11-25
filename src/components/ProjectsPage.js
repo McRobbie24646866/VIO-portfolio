@@ -37,7 +37,7 @@ const ProjectsPage = ({ setCurrentPage }) => {
     {
       title: "Interactive comic book vertical narritive (VIO202)",
       distance: "10K Run",
-      description: "user interactive comic book created in figma based off of our first year comic book",
+      description: "user interactive comic book created in figma based off of our first year comic book. Please note: when viewing this vertical narrative, change the scaling size of the page (top right corner) to 'fit width', so you can view the entire screen",
       tech: ["figma", "interactive"],
       link: "https://www.figma.com/proto/A695oBlG5LUTGtcQSoBgkZ/Untitled?node-id=0-1&p=f&t=jLeXTtOxlyv62f9p-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=81%3A354&show-proto-sidebar=1"
     },
